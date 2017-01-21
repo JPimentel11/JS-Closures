@@ -186,13 +186,13 @@ var module = (function() {
 	// outside our lexical scope
 
   return {
-    // Code here.
+    publicMethod: privateMethod
   };
 
 })();
 
 // Uncomment this after you create your public method
-//   module.publicMethod();
+   module.publicMethod();
 
 
 
@@ -236,7 +236,17 @@ timeOutCounter();
 	#PROBLEM-08
 \******************************************************************************/
 
+
 var funcArray = [];
+for (i = 0; i < 6; i++) {
+  funcArray.push(arrayEntryFunction(i));
+}
+
+function arrayEntryFunction(num) {
+  return function () {
+    return num;
+  };
+}
 
 /*
   Make the following code work
